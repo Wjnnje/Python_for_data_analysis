@@ -90,6 +90,7 @@ This left us with the following models :
 - Gradient Boosting Regressor
 - Hist Gradient Boosting Regressor
 - Bagging Regressor
+- LGBM Regressor
 - Random Forest Regressor
 - Extra Trees Regressor
 
@@ -99,6 +100,7 @@ We then used GridSearchCV to find the best hyperparameters, which gave us :
 - Gradient Boosting Regressor {'learning_rate': 0.3, 'loss': 'huber', 'n_estimators': 108}
 - Hist Gradient Boosting Regressor {'learning_rate': 0.2, 'loss': 'poisson', 'max_iter': 109}
 - Bagging Regressor {'max_samples': 1.0, 'n_estimators': 17}
+- LGBM Regressor {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37}
 - Random Forest Regressor 
 - Extra Trees Regressor 
 - KNNR
