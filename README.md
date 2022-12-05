@@ -12,31 +12,18 @@ We placed ourselves in the position of people from the bike renting company, wan
 ### Attribute Information
 
 Date : year-month-day
-
 Rented Bike count - Count of bikes rented at each hour
-
 Hour - Hour of he day
-
 Temperature-Temperature in Celsius
-
 Humidity - %
-
 Windspeed - m/s
-
 Visibility - 10m
-
 Dew point temperature - Celsius
-
 Solar radiation - MJ/m2
-
 Rainfall - mm
-
 Snowfall - cm
-
 Seasons - Winter, Spring, Summer, Autumn
-
 Holiday - Holiday/No holiday
-
 Functional Day - NoFunc(Non Functional Hours), Fun(Functional hours)
 
 
@@ -168,14 +155,17 @@ However we had issues with the package sklearn.ensemble containing the model typ
 The finished presents as follows :
 ![image](https://user-images.githubusercontent.com/116392151/205722298-0a785188-90cf-4070-99e1-366ea77e4341.png)
 
-### Difficulties encountered 
+### Some room for progress
+To further improve the API, we could have the user give us just a day, month and hour and, by scrapping the associated meteorological data, enter all the remaining parameters in the API so it can return a result. This would give less constraints to the user (less parameters to know for the user). 
+
+## Difficulties encountered 
 
 Most of our issues came from :
 - learning how to use new elements such as Flask
 - running grid searches and predictions, which could be very long and sometimes never finished running
 - installing and deploying packages (see problem with Flask evoked above)
 
-### What we learned
+## What we learned
 
 Through this project we had the occasion to learn, apply or dig into notions such as:
 - detailed analysis of a dataset
