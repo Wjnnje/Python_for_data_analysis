@@ -1,0 +1,80 @@
+/*Navbar*/
+
+.main-nav {
+  min-height: 60px;
+  background: transparent;
+  display: flex;
+  background-color: rgb(44, 45, 143);
+  padding: 10px 20px;
+}
+.main-nav .nav li a{
+  color: rgb(255, 255, 255);
+}
+.main-nav .nav .git{
+  font-size: 20px;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+.main-nav .nav .authors{
+  margin-top: 14px;
+  font-size: 15px;
+  margin-left: 20%;
+}
+.main-nav .nav .title{
+  margin-top: 8px;
+  font-size: 20px;
+  margin-left: 33%;
+}
+
+
+/* Predictions */
+
+body{
+  background-image: url("flag.png");
+  background-position: center;
+  background-size: 50%;
+}
+
+h1{
+  margin-top: 2px;
+  color: rgb(255, 0, 0);
+  text-shadow:  4px 4px 8px rgb(44, 45, 143);
+}
+div {
+  text-align: center;
+}
+form{
+  background-color: rgb(44, 45, 143);
+  margin-top: 40px;
+  padding: 60px 100px;
+  border-radius: 30px;
+  min-width: 300px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 20px;
+}
+input{
+  border-radius: 10px;
+  width: 38%;
+  align-items: center;
+  margin-bottom : 15px;
+  font-size: 20px;
+  margin-left: 15px;
+}
+button{
+  background-color: rgb(255, 0, 0);
+  color:rgb(255, 255, 255);
+  width: 20%;
+  font-size: 20px;
+  border-style: ridge;
+}
+b{
+  margin-top: 30px;
+  color: white;
+  background-color: rgb(44, 45, 143);
+  padding: 10px 80px;
+  border-radius: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 100px;
+}

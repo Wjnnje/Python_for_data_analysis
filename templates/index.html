@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>API - Seoul Bikes</title>
+	<!-- CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	<!-- Navbar -->
+	<nav class="main-nav">
+		<div class="container-fluid">
+			<ul class="nav">
+			  <li class="git active">
+				<a class="nav-link active" href="https://github.com/Wjnnje/Python_for_data_analysis.git" target="_blank">GitHub</a>
+			  </li>			  
+			  <li class="title"> <a>Seoul Bike Sharing Demand</a> </li>
+			  <li class="authors"> <a>By Inès PEREZ & Mathilde SALAÜN</a> </li>
+			</ul>
+		  </div>
+		</div>
+	</nav>
+	<!-- End Navbar-->
+</head>
+
+<body> <!-- Prédiction -->
+	<div class="prediction">
+		<h1>Rented Bikes Prediction </h1>
+		<p>Fill the inputs to have a prediction :)</p>
+		<form action="{{url_for('predict')}}" method="post", id="inputs">
+			<input type="text" name="hour" placeholder="Hour (0 to 23)" required="required">
+			<input type="text" name="temperature" placeholder="Temperature (°C)" required="required">
+			<input type="text" name="humidity" placeholder="Humidity (%)" required="required">
+			<input type="text" name="wind_speed" placeholder="Wind_speed (m/s)" required="required">
+			<input type="text" name="visibility" placeholder="Visibility (10m)" required="required">
+			<input type="text" name="dew_point_temperature" placeholder="Dew Point Temperature (°C)" required="required">
+			<input type="text" name="solar_radiation" placeholder="Solar Radiation (MJ/m2)" required="required">
+			<input type="text" name="rainfall" placeholder="Rainfall (mm)" required="required">
+			<input type="text" name="snowfall" placeholder="Snowfall (cm)" required="required">
+			<input type="text" name="seasons" placeholder="Seasons (1 to 4 : Spring to Winter)" required="required">
+			<input type="text" name="holiday" placeholder="Holiday (1 : No Holiday, 2 : Holiday)" required="required">
+			<input type="text" name="day" placeholder= "Day (1 to 30)" required="required">
+			<input type="text" name="month" placeholder="Month (1 to 12) " required="required">
+
+			<br>
+			<br>
+			<button type="submit" class="button">
+				Predict Value
+			</button>
+			<br>
+		</form>
+		
+		<br>
+		<b>{{prediction_text}}</b>
+		<br>
+	</div>
+</body>
+</html>
