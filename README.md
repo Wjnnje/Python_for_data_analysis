@@ -50,65 +50,7 @@ We were able to look at the type and repartition of values for all columns:
 - The date variable was the only variable of type datetime, which tends to be impractical for visualizing and modeling
 - There were some discreptencies in the season labels, which we corrected using the dates given to us
 
-## What we observed
-
-Below are the plots we were able to trace and what we could gather from them.
-### Global view of the data
-![image](https://user-images.githubusercontent.com/116392151/205530591-8917ba99-9040-4ca9-ba73-9a0b0c8009bf.png)
-
-### Rented bikes over time
-![image](https://user-images.githubusercontent.com/116392151/205530755-4d8c4256-9c9c-4f17-bcfe-74fe7331881a.png)
-
-### Rented depending on the year and month
-![image](https://user-images.githubusercontent.com/116392151/205530814-004fd83d-36e2-4f5f-a375-a7c68c55fdb7.png)
-
-### Rented bikes depending on the month and day
-![image](https://user-images.githubusercontent.com/116392151/205530925-26a49495-95be-4f11-ab27-9a6d969ea7c3.png)
-
-### Rented bikes depending on the 
-![image](https://user-images.githubusercontent.com/116392151/205531121-e54d168e-f59a-4207-8d7a-fd1f8b80c51c.png)
-
-### Rented bikes depending on the year, month and season
-![image](https://user-images.githubusercontent.com/116392151/205531163-953e758e-45b8-4305-8db4-45609e1b5202.png)
-![image](https://user-images.githubusercontent.com/116392151/205531182-15271ba5-da7f-478b-950a-f5d607d8da07.png)
-
-### Rented bikes depending on the season
-![image](https://user-images.githubusercontent.com/116392151/205531240-8c50bec6-df21-4b4a-9009-5c358ea73f65.png)
-
-### Rented bikes depending on the season, rainfall and snowfall
-![image](https://user-images.githubusercontent.com/116392151/205531320-e6bcead1-1a8f-4c65-9ab1-5bca7fae16f4.png)
-
-### Rented bikes depending on the hour, rainfall and snowfall
-![image](https://user-images.githubusercontent.com/116392151/205531351-4d9434a7-c161-4281-a526-e397477eef55.png)
-
-### Rented bikes depending on the holidays, functioning days and hour
-![image](https://user-images.githubusercontent.com/116392151/205531465-c50bace5-1d5d-4307-aaa3-813ed10d609e.png)
-
-### Rented bikes depending on the moment of the day and the season
-![image](https://user-images.githubusercontent.com/116392151/205531628-daae5fca-f973-4bc8-9676-305fe1947675.png)
-
-### Rented bikes depending on meteorological conditions
-#### Temperature and seasons
-![image](https://user-images.githubusercontent.com/116392151/205531835-04579b1b-c939-4678-8f67-dc1abec2f2e6.png)
-
-#### Humidity and temperature
-![image](https://user-images.githubusercontent.com/116392151/205531890-9f34f8af-2153-4bf9-b8b7-38fe6df8f9b1.png)
-
-#### Wind Speed
-![image](https://user-images.githubusercontent.com/116392151/205531949-d1bc9ea9-710d-4e5a-9d5f-9fc45c818d3e.png)
-
-#### Visibility
-![image](https://user-images.githubusercontent.com/116392151/205531999-5e98bbeb-a09c-49cf-9603-18f5ca8f145b.png)
-
-#### Dew point temperature
-![image](https://user-images.githubusercontent.com/116392151/205532045-72bcb4ca-f0df-47db-a0f3-c2a9f6c0eae0.png)
-
-#### Solar radiation
-![image](https://user-images.githubusercontent.com/116392151/205532110-8b8ca241-b1f6-4d97-984b-46133761e644.png)
-
-#### Temperature, humidity and wind speed
-![image](https://user-images.githubusercontent.com/116392151/205532144-5564cafc-74a2-445b-b346-0302aae5fc3c.png)
-
+## Graphs and observations (in the notebook and PPT)
 
 ## What we changed
 Upon exploring and visualizing our data, we made some choices in order to facilitate our work.
@@ -150,12 +92,16 @@ This left us with the following models :
 - Random Forest Regressor
 - Extra Trees Regressor
 
+We also tried using a KNN Regressor and Linear Regression model, which we were familiar with, to no avail.
+
 We then used GridSearchCV to find the best hyperparameters, which gave us :
 - Gradient Boosting Regressor {'learning_rate': 0.3, 'loss': 'huber', 'n_estimators': 108}
 - Hist Gradient Boosting Regressor {'learning_rate': 0.2, 'loss': 'poisson', 'max_iter': 109}
 - Bagging Regressor {'max_samples': 1.0, 'n_estimators': 17}
-- Random Forest Regressor
-- Extra Trees Regressor
+- Random Forest Regressor 
+- Extra Trees Regressor 
+- KNNR
+- Linear Regression
 
 We then evaluated the score of each optimized model (comparing predicted values to observed values), and came to the conclusion that the models were, from best to worst :
 - Hist Gradient Boosting Regressor (~0.89)
@@ -175,10 +121,13 @@ From most to least accurate :
 - Random Forest Classifier
 - Extra Trees Classifier
 
+We also tried using a KNN model, which we were familiar with, to no avail.
+
 We then used GridSearchCV to find the best hyperparameters, which gave us :
 - LGBM Classifier {boosting_type='gbdt', max_depth= -1, num_leaves= 37}
 - Random Forest Classifier {criterion='gini', n_estimators=106}
 - Extra Trees Classifier {criterion='entropy', n_estimators= 130}
+- KNN {'n_neighbors': 6, 'p': 1}
 
 We then evaluated the accuracy of each optimized model :
 - LGBM Classifier (~0.80)
@@ -201,9 +150,30 @@ We then created an API with Flask, allowing a user to find out how many bikes wo
 - the holiday 	
 - the day 	
 - the month
-
-The API uses our most accurate model, which is the Hist Gradient Boosting Regressor.
-It presents as follows :
-![image](https://user-images.githubusercontent.com/116392151/205535689-d62ed582-cdc5-4a9d-836c-aeca7d52e627.png)
-
 The aim is to allow professionnals to anticipate the demand for bikes based on time and on the predicted meteorological conditions.
+
+The API was originally our most accurate model, which is the Hist Gradient Boosting Regressor.
+However we had issues with the package sklearn.ensemble containing the model type we wanted, as well as all of our most efficient models. We therefore chose another model, the LGBM Regressor, which we deployed in the api with the following hyperparameters : {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37}
+
+The finished presents as follows :
+![image](https://user-images.githubusercontent.com/116392151/205722298-0a785188-90cf-4070-99e1-366ea77e4341.png)
+
+### Difficulties encountered 
+
+Most of our issues came from :
+- learning how to use new elements such as Flask
+- running grid searches and predictions, which could be very long and sometimes never finished running
+- installing and deploying packages (see problem with Flask evoked above)
+
+### What we learned
+
+Through this project we had the occasion to learn, apply or dig into notions such as:
+- detailed analysis of a dataset
+- manipulation and visualization of data
+- selecting relevant
+- preprocessing of data
+- machine learning models
+- optimization of said models
+- creation of an API
+
+We will now be able to use this experience in future projects.
