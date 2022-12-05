@@ -110,6 +110,8 @@ We then evaluated the score of each optimized model (comparing predicted values 
 - Random Forest Regressor (~0.87)
 - Bagging Regressor (~0.86)
 - Gradient Boosting Regressor (~0.85)
+- KNNR (~0.57)
+- Linear Regression (~0.51)
 
 ### Classification Models
 
@@ -134,6 +136,7 @@ We then evaluated the accuracy of each optimized model :
 - LGBM Classifier (~0.80)
 - Random Forest Classifier (~0.80)
 - Extra Trees Classifier (~0.78)
+- KNN (~0.58)
 
 ## API
 
@@ -154,7 +157,7 @@ We then created an API with Flask, allowing a user to find out how many bikes wo
 The aim is to allow professionnals to anticipate the demand for bikes based on time and on the predicted meteorological conditions.
 
 The API was originally our most accurate model, which is the Hist Gradient Boosting Regressor.
-However we had issues with the package sklearn.ensemble containing the model type we wanted, as well as all of our most efficient models. We therefore chose another model, the LGBM Regressor, which we deployed in the api with the following hyperparameters : {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37}
+However we had issues with the package sklearn.ensemble containing the model type we wanted, as well as all of our most efficient models. We therefore chose another model, the LGBM Regressor, which we deployed in the api with the following hyperparameters {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37} and an estimated score of 0.88.
 
 The finished presents as follows :
 ![image](https://user-images.githubusercontent.com/116392151/205722298-0a785188-90cf-4070-99e1-366ea77e4341.png)
