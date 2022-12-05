@@ -53,8 +53,8 @@ We were able to look at the type and repartition of values for all columns:
 
 ## Graphs and observations (in the notebook and PPT)
 Some plots (especially those using plotly express) may not display directly in the notebook file.
-To visualize them you can either compile the notebook, or just go to the plots folder which contains all the plots we did.
-The plots which are not displaying in the preview of the notebook are plots 14 to 20 that you can find in the plots folder.
+
+To visualize them you can either compile the notebook, or just go to the plots folder which contains all the plots we did (plots 14 to 20 may be the ones which are not displaying in the notebook preview)
 
 ## What we changed
 Upon exploring and visualizing our data, we made some choices in order to facilitate our work.
