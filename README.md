@@ -12,18 +12,31 @@ We placed ourselves in the position of people from the bike renting company, wan
 ### Attribute Information
 
 Date : year-month-day
+
 Rented Bike count - Count of bikes rented at each hour
+
 Hour - Hour of he day
+
 Temperature-Temperature in Celsius
+
 Humidity - %
+
 Windspeed - m/s
+
 Visibility - 10m
+
 Dew point temperature - Celsius
+
 Solar radiation - MJ/m2
+
 Rainfall - mm
+
 Snowfall - cm
+
 Seasons - Winter, Spring, Summer, Autumn
+
 Holiday - Holiday/No holiday
+
 Functional Day - NoFunc(Non Functional Hours), Fun(Functional hours)
 
 
@@ -147,6 +160,7 @@ We then created an API with Flask, allowing a user to find out how many bikes wo
 - the holiday 	
 - the day 	
 - the month
+
 The aim is to allow professionnals to anticipate the demand for bikes based on time and on the predicted meteorological conditions.
 
 The API was originally our most accurate model, which is the Hist Gradient Boosting Regressor.
