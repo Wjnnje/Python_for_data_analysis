@@ -3,7 +3,7 @@ import pickle
 
 
 app = Flask(__name__)
-model = pickle.load(open('moddeell.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
 
 
 @app.route('/')
