@@ -1,4 +1,5 @@
-# Python_for_data_analysis : Seoul Bike demand Predictor
+# Python_for_data_analysis : Seoul Bike demand Predictions
+![image](https://user-images.githubusercontent.com/116392151/205723562-276d35d0-547a-499f-b8e2-27d4cc6ec3f8.png)
 
 For this project, we studied and exploited data from a bike renting company based in Seoul. The dataset which was given to us to analyse gathered data regarding the date (and info on said date such as the season, wheter it is a holiday...),the meteorological conditions, as well as the number of bikes rented on said date. 
 
