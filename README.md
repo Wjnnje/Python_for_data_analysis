@@ -8,6 +8,23 @@ We placed ourselves in the position of people from the bike renting company, wan
 
 ## Importing and exploring our data
 
+### Attribute Information
+
+Date : year-month-day
+Rented Bike count - Count of bikes rented at each hour
+Hour - Hour of he day
+Temperature-Temperature in Celsius
+Humidity - %
+Windspeed - m/s
+Visibility - 10m
+Dew point temperature - Celsius
+Solar radiation - MJ/m2
+Rainfall - mm
+Snowfall - cm
+Seasons - Winter, Spring, Summer, Autumn
+Holiday - Holiday/No holiday
+Functional Day - NoFunc(Non Functional Hours), Fun(Functional hours)
+
 ### What we noticed
 Upon importing the data, we were able to notice important aspect of the dataset :
 - No NAs we present, saving us some time in cleaning up the dataframe
