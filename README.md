@@ -106,6 +106,7 @@ We then used GridSearchCV to find the best hyperparameters, which gave us :
 
 We then evaluated the score of each optimized model (comparing predicted values to observed values), and came to the conclusion that the models were, from best to worst :
 - Hist Gradient Boosting Regressor (~0.89)
+- LGBM Regressor (~0.88)
 - Extra Trees Regressor (~0.88)
 - Random Forest Regressor (~0.87)
 - Bagging Regressor (~0.86)
@@ -157,7 +158,7 @@ We then created an API with Flask, allowing a user to find out how many bikes wo
 The aim is to allow professionnals to anticipate the demand for bikes based on time and on the predicted meteorological conditions.
 
 The API was originally our most accurate model, which is the Hist Gradient Boosting Regressor.
-However we had issues with the package sklearn.ensemble containing the model type we wanted, as well as all of our most efficient models. We therefore chose another model, the LGBM Regressor, which we deployed in the api with the following hyperparameters {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37} and an estimated score of 0.88.
+However we had issues with the package sklearn.ensemble containing the model type we wanted, as well as all of our most efficient models. We therefore chose another model, the LGBM Regressor - our second best model -, which we deployed in the api with the following hyperparameters {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37} and an estimated score of 0.88.
 
 The finished presents as follows :
 ![image](https://user-images.githubusercontent.com/116392151/205722298-0a785188-90cf-4070-99e1-366ea77e4341.png)
