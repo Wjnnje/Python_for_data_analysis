@@ -171,8 +171,8 @@ The aim is to allow professionnals to anticipate the demand for bikes based on t
 The API was originally our most accurate model, which is the Hist Gradient Boosting Regressor.
 However we had issues with the package sklearn.ensemble containing the model type we wanted, as well as all of our most efficient models. We therefore chose another model, the LGBM Regressor - our second best model -, which we deployed in the api with the following hyperparameters {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37} and an estimated score of 0.89.
 
-The finished presents as follows :
-![image](https://user-images.githubusercontent.com/116392151/205722298-0a785188-90cf-4070-99e1-366ea77e4341.png)
+The finished API presents as follows :
+![image](https://user-images.githubusercontent.com/116392151/205981107-a35da5da-1870-4dbf-824e-32e64bd62327.png)
 
 ### Some room for progress
 To further improve the API, we could have the user give us just a day, month and hour and, by recuperating the associated meteorological data in a weather info web page, enter all the remaining parameters in the API so it can return a result. This would give less constraints to the user as he/she would only have time data to enter. 
