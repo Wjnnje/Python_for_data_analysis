@@ -159,8 +159,8 @@ We then created an API with Flask, allowing a user to find out how many bikes wo
 
 The aim is to allow professionnals to anticipate the demand for bikes based on time and on the predicted meteorological conditions.
 
-The API was originally our most accurate model, which is the Hist Gradient Boosting Regressor.
-However we had issues with the package sklearn.ensemble containing the model type we wanted, as well as all of our most efficient models. We therefore chose another model, the LGBM Regressor - our second best model -, which we deployed in the api with the hyperparameters {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37} and an estimated score of ~0.89.
+The API was originally going to use our most accurate model, which was the Hist Gradient Boosting Regressor.
+However we had issues with the package sklearn.ensemble which contained the model type we wanted, as well as all of our most efficient models. We therefore had to find another model, the LGBM Regressor - that turned out to be our second best model -, which we deployed in the api with the hyperparameters {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37} and an estimated score of ~0.89.
 
 The finished API presents as follows :
 ![image](https://user-images.githubusercontent.com/116392151/205981107-a35da5da-1870-4dbf-824e-32e64bd62327.png)
