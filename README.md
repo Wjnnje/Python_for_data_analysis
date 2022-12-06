@@ -98,8 +98,8 @@ We then used GridSearchCV to find the best hyperparameters, which gave us :
 - Hist Gradient Boosting Regressor {'learning_rate': 0.2, 'loss': 'poisson', 'max_iter': 109}
 - Bagging Regressor {'max_samples': 1.0, 'n_estimators': 26}
 - LGBM Regressor {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37}
-- Random Forest Regressor 
-- Extra Trees Regressor 
+- Random Forest Regressor {'n_estimators' = 100}
+- Extra Trees Regressor {'criterion': 'squared_error', 'n_estimators': 101}
 - KNNR {'algorithm': 'brute', 'n_neighbors': 6, 'weights': 'distance'}
 - Linear Regression 
 
