@@ -127,6 +127,7 @@ We then evaluated the score of each optimized model (comparing predicted values 
 - Linear Regression (~0.51)
 
 To sum up the results :
+
 ![image](https://user-images.githubusercontent.com/116392151/206015124-9f417be4-16f7-4916-a7a7-5ffbf4136091.png)
 
 ### Classification Models
