@@ -107,9 +107,9 @@ This left us with the following models :
 We also tried using a KNN Regressor and Linear Regression model, which we were familiar with, to no avail.
 
 We then used GridSearchCV to find the best hyperparameters, which gave us :
-- Gradient Boosting Regressor {'learning_rate': 0.3, 'loss': 'huber', 'n_estimators': 108}
+- Gradient Boosting Regressor {'learning_rate': 0.3, 'loss': 'huber', 'n_estimators': 109}
 - Hist Gradient Boosting Regressor {'learning_rate': 0.2, 'loss': 'poisson', 'max_iter': 109}
-- Bagging Regressor {'max_samples': 1.0, 'n_estimators': 17}
+- Bagging Regressor {'max_samples': 1.0, 'n_estimators': 26}
 - LGBM Regressor {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37}
 - Random Forest Regressor 
 - Extra Trees Regressor 
@@ -169,13 +169,13 @@ We then created an API with Flask, allowing a user to find out how many bikes wo
 The aim is to allow professionnals to anticipate the demand for bikes based on time and on the predicted meteorological conditions.
 
 The API was originally our most accurate model, which is the Hist Gradient Boosting Regressor.
-However we had issues with the package sklearn.ensemble containing the model type we wanted, as well as all of our most efficient models. We therefore chose another model, the LGBM Regressor - our second best model -, which we deployed in the api with the following hyperparameters {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37} and an estimated score of 0.88.
+However we had issues with the package sklearn.ensemble containing the model type we wanted, as well as all of our most efficient models. We therefore chose another model, the LGBM Regressor - our second best model -, which we deployed in the api with the following hyperparameters {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37} and an estimated score of 0.89.
 
 The finished presents as follows :
 ![image](https://user-images.githubusercontent.com/116392151/205722298-0a785188-90cf-4070-99e1-366ea77e4341.png)
 
 ### Some room for progress
-To further improve the API, we could have the user give us just a day, month and hour and, by scrapping the associated meteorological data, enter all the remaining parameters in the API so it can return a result. This would give less constraints to the user (less parameters to know for the user). 
+To further improve the API, we could have the user give us just a day, month and hour and, by recuperating the associated meteorological data in a weather info web page, enter all the remaining parameters in the API so it can return a result. This would give less constraints to the user as he/she would only have time data to enter. 
 
 ## Difficulties encountered 
 
