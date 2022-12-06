@@ -126,6 +126,9 @@ We then evaluated the score of each optimized model (comparing predicted values 
 - KNNR (~0.57)
 - Linear Regression (~0.51)
 
+To sum up the results :
+![image](https://user-images.githubusercontent.com/116392151/206015124-9f417be4-16f7-4916-a7a7-5ffbf4136091.png)
+
 ### Classification Models
 
 We started by splitting our data into a training and testing set, with the categorical variable bike affluence as target. The training set was composed of 90% of the dataset, and the testing set of 10%.
