@@ -12,31 +12,18 @@ We placed ourselves in the position of people from the bike renting company, wan
 ### Attribute Information
 
 Date : year-month-day
-
 Rented Bike count - Count of bikes rented at each hour
-
 Hour - Hour of he day
-
 Temperature-Temperature in Celsius
-
 Humidity - %
-
 Windspeed - m/s
-
 Visibility - 10m
-
 Dew point temperature - Celsius
-
 Solar radiation - MJ/m2
-
 Rainfall - mm
-
 Snowfall - cm
-
 Seasons - Winter, Spring, Summer, Autumn
-
 Holiday - Holiday/No holiday
-
 Functional Day - NoFunc(Non Functional Hours), Fun(Functional hours)
 
 
@@ -113,8 +100,8 @@ We then used GridSearchCV to find the best hyperparameters, which gave us :
 - LGBM Regressor {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37}
 - Random Forest Regressor 
 - Extra Trees Regressor 
-- KNNR
-- Linear Regression
+- KNNR {'algorithm': 'brute', 'n_neighbors': 6, 'weights': 'distance'}
+- Linear Regression 
 
 We then evaluated the score of each optimized model (comparing predicted values to observed values), and came to the conclusion that the models were, from best to worst :
 - Hist Gradient Boosting Regressor (~0.89)
@@ -144,16 +131,16 @@ From most to least accurate :
 We also tried using a KNN model, which we were familiar with, to no avail.
 
 We then used GridSearchCV to find the best hyperparameters, which gave us :
-- LGBM Classifier {boosting_type='gbdt', max_depth= -1, num_leaves= 37}
-- Random Forest Classifier {criterion='gini', n_estimators=106}
-- Extra Trees Classifier {criterion='entropy', n_estimators= 130}
-- KNN {'n_neighbors': 6, 'p': 1}
+- LGBM Classifier {'boosting_type': 'gbdt', 'max_depth': -1, 'num_leaves': 35}
+- Random Forest Classifier {'criterion': 'entropy', 'n_estimators': 124}
+- Extra Trees Classifier {'criterion': 'gini', 'n_estimators': 122}
+- KNN {'n_neighbors': 3, 'p': 1}
 
 We then evaluated the accuracy of each optimized model :
 - LGBM Classifier (~0.80)
 - Random Forest Classifier (~0.80)
-- Extra Trees Classifier (~0.78)
-- KNN (~0.58)
+- Extra Trees Classifier (~0.80)
+- KNN (~0.73)
 
 ## API
 
@@ -173,13 +160,13 @@ We then created an API with Flask, allowing a user to find out how many bikes wo
 The aim is to allow professionnals to anticipate the demand for bikes based on time and on the predicted meteorological conditions.
 
 The API was originally our most accurate model, which is the Hist Gradient Boosting Regressor.
-However we had issues with the package sklearn.ensemble containing the model type we wanted, as well as all of our most efficient models. We therefore chose another model, the LGBM Regressor - our second best model -, which we deployed in the api with the following hyperparameters {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37} and an estimated score of 0.89.
+However we had issues with the package sklearn.ensemble containing the model type we wanted, as well as all of our most efficient models. We therefore chose another model, the LGBM Regressor - our second best model -, which we deployed in the api with the hyperparameters {'boosting_type': 'dart', 'learning_rate': 0.4, 'num_leaves': 37} and an estimated score of ~0.89.
 
 The finished API presents as follows :
 ![image](https://user-images.githubusercontent.com/116392151/205981107-a35da5da-1870-4dbf-824e-32e64bd62327.png)
 
 ### Some room for progress
-To further improve the API, we could have the user give us just a day, month and hour and, by recuperating the associated meteorological data in a weather info web page, enter all the remaining parameters in the API so it can return a result. This would give less constraints to the user as he/she would only have time data to enter. 
+Although we did our best with the tile we had, we do have some ideas to further improve the API. We could have the user give us just a day, month and hour, deduce from our data if that date is a holiday, and by recuperating the associated meteorological data in a weather info web page, enter all the remaining parameters in the API so it can return a result. This would give less constraints to the user as he/she would only have time data to enter.
 
 ## Difficulties encountered 
 
@@ -199,4 +186,4 @@ Through this project we had the occasion to learn, apply or dig into notions suc
 - optimization of said models
 - creation of an API
 
-We will now be able to use this experience in future projects.
+We will now be able to use this experience to produce even better projects in the future.
