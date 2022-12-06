@@ -66,14 +66,21 @@ We ended up adding the following columns :
 - month, integer from 1 to 12
 - year, integer between 2017 and 2018
 - bike_affluence, categorical varaible among ("very few","few", "some", "many") (to allow us to use classification models to predict the demand, instead of just regression models)
+- Moment_of_day, for a categorical representation of the hours of the day
 
 ### What we removed
 Upon manipulating our data, we discovered that :
-- the functioning_day variables, which was not originally explained in the description of the dataset, was actually telling us on which days the company did not rent bikes (days when no bikes were ever rented). Since we were focusing on causes for the demand of bikes that were external to the company, whe dropped the column to focus on the other predicators.
+- functioning_day : the functioning_day variables, which was not originally explained in the description of the dataset, was actually telling us on which days the company did not rent bikes (days when no bikes were ever rented). Since we were focusing on causes for the demand of bikes that were external to the company, whe dropped the column to focus on the other predicators.
 
-- the date column would be difficult to manipulate, and we already had created new time variables (see added variables above), so we dropped it as well
+- date : the date column would be difficult to manipulate, and we already had created new time variables (see added variables above), so we dropped it as well
 
-- almost no data was recorded in the year 2017, and the great majority of our rows were from 2018. This does not mean that no bikes were rented then. By the looks of it, we most likely had little to no data recorded before november of 2017. Furthermore we only had two years to use. We figured that the year variable would disrupt, rather than help, our study and models, and since most of the data was from 2018, the loss of information would be minimal. We therefore dropped the year column as well.
+- year : almost no data was recorded in the year 2017, and the great majority of our rows were from 2018. This does not mean that no bikes were rented then. By the looks of it, we most likely had little to no data recorded before november of 2017. Furthermore we only had two years to use. We figured that the year variable would disrupt, rather than help, our study and models, and since most of the data was from 2018, the loss of information would be minimal. We therefore dropped the year column as well.
+
+- Moment of day : it was no longer usefull after visualizing the data
+
+- dew point temperatureh : it was too correlated to temperature
+
+- seasons : it was too correlated to month
 
 ## Preprocessing the data
 
@@ -151,12 +158,10 @@ We then created an API with Flask, allowing a user to find out how many bikes wo
 - the temperature 	
 - the humidity 	
 - the wind speed 	
-- the visibility 	
-- the dew point temperature 	
+- the visibility 		
 - the solar radiation 	
 - the rainfall 	
-- the snowfall 	
-- the seasons 	
+- the snowfall 		
 - the holiday 	
 - the day 	
 - the month
